@@ -108,7 +108,7 @@ button {
         overflow: unset;
         overflow-x: hidden;
     }
-    
+
     .container {
         top: 10% !important;
     }
@@ -147,7 +147,7 @@ button {
 
     .credits {
         left: 50% !important;
-        bottom: 0% !important;
+        bottom: -10% !important;
         transform: translate(-50%, -50%);
         width: max-content;
         font-size: 15px;
