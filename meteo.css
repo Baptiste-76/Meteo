@@ -145,9 +145,14 @@ form {
 }
 
 @media screen and (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
+    html, body {
+        overflow: unset;
+        overflow-x: hidden;
+    }
+
     .container {
-        top: 10px;
-        margin: 0px auto;
+        top: 0px;
+        margin: 20px auto;
     }
 
     .row {
