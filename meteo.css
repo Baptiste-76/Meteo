@@ -1,0 +1,293 @@
+html, body {
+    background: url("map.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    overflow: hidden;
+    position: relative;
+}
+
+button {
+    margin: 15px 5px !important;
+    padding: 15px 20px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 20%;
+}
+
+.close {
+    color: #fff;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 1439px) and (orientation: landscape) {
+    .container {
+        top: 10%
+    }
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait) {
+    .container {
+        top: 20% !important;
+    }
+
+    .row {
+        width: 380px !important;
+    }
+
+    .credits {
+        left: 50% !important;
+        bottom: 0% !important;
+        transform: translate(-50%, -50%);
+        width: max-content;
+    }
+
+    .buttonsGroup button, [type=submit] {
+        padding: 10px 15px !important;
+    }
+}
+
+@media screen and (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        top: 0px !important;
+        margin: 5px auto;
+    }
+
+    .row {
+        width: 450px !important;
+        padding: 10px 20px !important;
+    }
+
+    .col-md-10 h1 {
+        font-size: 30px;
+    }
+
+    .col-md-10 h4 {
+        font-size: 20px;
+    }
+
+    .col-md-10 h2 {
+        font-size: 25px;
+    }
+
+    #temperature {
+        font-size: 1.5em !important;
+    }
+
+    #icone {
+        font-size: 40px;
+    }
+
+    #description, #wind, #humidity {
+        font-size: inherit !important;
+    }
+
+    .credits {
+        display: none;
+    }
+
+    button {
+        margin: 10px 5px !important;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    .container {
+        top: 10% !important;
+    }
+
+    .row {
+        width: 290px !important;
+    }
+
+    .col-md-10 h1 {
+        font-size: 30px;
+    }
+
+    .col-md-10 h4 {
+        font-size: 20px;
+    }
+
+    .col-md-10 h2 {
+        font-size: 25px;
+    }
+
+    #temperature {
+        font-size: 1.5em !important;
+    }
+
+    #icone {
+        font-size: 40px;
+    }
+
+    #description, #wind, #humidity, .wind-humidity {
+        font-size: 20px !important;
+    }
+
+    button {
+        margin: 10px 5px !important;
+    }
+
+    .credits {
+        left: 50% !important;
+        bottom: 0% !important;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        font-size: 15px;
+    }
+
+    .buttonsGroup button, [type=submit] {
+        padding: 10px 15px !important;
+        margin: 5px 5px !important;
+    }
+}
+
+@media screen and (max-width: 650px) and (max-height: 450px) and (orientation: landscape) {
+    .container {
+        top: 0px !important;
+        margin: 10px auto;
+    }
+
+    .row {
+        width: 400px !important;
+        padding: 10px 20px !important;
+    }
+
+    .col-md-10 h1 {
+        font-size: 25px;
+    }
+
+    .col-md-10 h4 {
+        font-size: 15px;
+    }
+
+    .col-md-10 h2 {
+        font-size: 20px;
+    }
+
+    #temperature {
+        font-size: 15px !important;
+    }
+
+    #icone {
+        font-size: 30px;
+    }
+
+    #description, #wind, #humidity, .wind-humidity {
+        font-size: 15px !important;
+    }
+
+    .credits {
+        display: none;
+    }
+
+    .modal-content {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    button {
+        margin: 10px 5px !important;
+    }
+}
+
+#description {
+    font-size: 40px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.alert {
+    display: none;
+    text-shadow: none;
+}
+
+.modal-content {
+    border: 2px solid #000;
+    text-shadow: none;
+    color: #000;
+}
+
+.modal-header, .modal-footer {
+    background-color: #333;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+}
+
+.modal-body {
+    background-color: #d0ae7e;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+form {
+    text-align: center;
+}
+
+.nameInput, .zipInput, .coordInput, [type=submit] {
+    display: none;
+}
+
+.zipInput p, .nameInput p {
+    color: #fff;
+    text-shadow: none;
+    font-style: italic;
+}
+
+.row {
+    background-color: #333;
+    width: 500px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+  
+#ville {
+    text-transform: capitalize;
+}
+  
+#temperature {
+    font-size: 4em;
+}
+
+.wind-humidity {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+}
+
+#wind, #humidity {
+    font-size: 40px;
+}
+  
+#changer {
+    background: rgba(178, 223, 251, .3);
+    cursor: pointer;
+}
+
+.credits {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #fff;
+    background-color: #917046;
+    padding: 10px 15px;
+    border-radius: 10px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="meteo.css">
+
+    <title>Application Météo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-10">
+                <h1>Météo</h1>
+                <h4><span class="date"></span></h4>
+                <h2><span id="ville">Paris</span></h2>
+
+                <div class="alert alert-danger" role="alert">
+                    <strong>Erreur</strong>, veuillez vérifier les informations saisies ou réessayer ultérieurement.
+                </div>
+
+                <div id="temperature">
+                    <span id="icone" class="d-block"></span>
+                    <span id="description" class="d-block"></span>
+                    <span id="temperature_label">XX.X</span> °C
+                    <div class="wind-humidity">
+                        <div class="wind">
+                            <i class='ri-windy-fill'></i> <span id="wind">X</span> m/s 
+                        </div>
+                        <div class="humidity">
+                            <i class='ri-drop-fill'></i> <span id="humidity">X</span> %
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-warning mt-2" data-toggle="modal" data-target="#changeModal">
+                    Changer de ville
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="changeModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="changeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header my-0">
+                    <h3 class="modal-title" id="changeModalLabel">Sélection</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Veuillez choisir votre méthode de sélection : recherche par <b>nom</b>, <b>code postal</b> ou <b>coordonnées géographiques</b>.
+                    <br>
+                    <div class="buttonsGroup text-center">
+                        <button type="button" class="btn btn-warning" id="byName">Nom</button>
+                        <button type="button" class="btn btn-warning" id="byZip">Code Postal</button>
+                        <button type="button" class="btn btn-warning" id="byCoord">Coord. Géo.</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <form>
+                        <div class="form-group nameInput">
+                            <input type="text" id="cityName" class="form-control" placeholder="Ville">
+                            <p>Veuillez respecter les tirets et/ou apostrophes</p>
+                        </div>
+                        <div class="form-group zipInput">
+                            <input type="number" id="zipCode" class="form-control" placeholder="Code Postal">
+                            <p>Uniquement disponible pour la France</p>
+                        </div>
+                        <div class="form-group coordInput">
+                            <input type="number" step="any" id="longitude" class="form-control mb-2" placeholder="Longitude">
+                            <input type="number" step="any" id="latitude" class="form-control" placeholder="Latitude">
+                        </div>
+                        <button type="submit" class="btn btn-success">Valider</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits -->
+    <div class="credits">
+        Photo by Nik Shuliahin on Unsplash
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="meteo.js"></script>
+</body>
+</html>
