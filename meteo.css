@@ -12,9 +12,9 @@ html, body {
     position: relative;
 }
 
-button {
-    margin: 15px 5px !important;
-    padding: 15px 20px !important;
+button.btn {
+    margin: 15px 5px;
+    padding: 15px 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -26,191 +26,16 @@ button {
     top: 20%;
 }
 
-.close {
+.row {
+    background-color: #333;
+    max-width: 500px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.close, .close:hover {
     color: #fff;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-@media screen and (max-width: 1439px) and (orientation: landscape) {
-    .container {
-        top: 10%
-    }
-}
-
-@media screen and (max-width: 500px) and (orientation: portrait) {
-    .container {
-        top: 20% !important;
-    }
-
-    .row {
-        width: 380px !important;
-    }
-
-    .credits {
-        left: 50% !important;
-        bottom: 0% !important;
-        transform: translate(-50%, -50%);
-        width: max-content;
-    }
-
-    .buttonsGroup button, [type=submit] {
-        padding: 10px 15px !important;
-    }
-}
-
-@media screen and (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
-    .container {
-        top: 0px !important;
-        margin: 5px auto;
-    }
-
-    .row {
-        width: 450px !important;
-        padding: 10px 20px !important;
-    }
-
-    .col-md-10 h1 {
-        font-size: 30px;
-    }
-
-    .col-md-10 h4 {
-        font-size: 20px;
-    }
-
-    .col-md-10 h2 {
-        font-size: 25px;
-    }
-
-    #temperature {
-        font-size: 1.5em !important;
-    }
-
-    #icone {
-        font-size: 40px;
-    }
-
-    #description, #wind, #humidity {
-        font-size: inherit !important;
-    }
-
-    .credits {
-        display: none;
-    }
-
-    button {
-        margin: 10px 5px !important;
-    }
-}
-
-@media screen and (max-width: 350px) and (orientation: portrait) {
-    html, body {
-        overflow: unset;
-        overflow-x: hidden;
-    }
-
-    .container {
-        top: 10% !important;
-    }
-
-    .row {
-        width: 290px !important;
-    }
-
-    .col-md-10 h1 {
-        font-size: 30px;
-    }
-
-    .col-md-10 h4 {
-        font-size: 20px;
-    }
-
-    .col-md-10 h2 {
-        font-size: 25px;
-    }
-
-    #temperature {
-        font-size: 1.5em !important;
-    }
-
-    #icone {
-        font-size: 40px;
-    }
-
-    #description, #wind, #humidity, .wind-humidity {
-        font-size: 20px !important;
-    }
-
-    button {
-        margin: 10px 5px !important;
-    }
-
-    .credits {
-        left: 50% !important;
-        bottom: -10% !important;
-        transform: translate(-50%, -50%);
-        width: max-content;
-        font-size: 15px;
-    }
-
-    .buttonsGroup button, [type=submit] {
-        padding: 10px 15px !important;
-        margin: 5px 5px !important;
-    }
-}
-
-@media screen and (max-width: 650px) and (max-height: 450px) and (orientation: landscape) {
-    html, body {
-        overflow: unset;
-        overflow-x: hidden;
-    }
-
-    .container {
-        top: 0px !important;
-        margin: 10px auto;
-    }
-
-    .row {
-        width: 400px !important;
-        padding: 10px 20px !important;
-    }
-
-    .col-md-10 h1 {
-        font-size: 25px;
-    }
-
-    .col-md-10 h4 {
-        font-size: 15px;
-    }
-
-    .col-md-10 h2 {
-        font-size: 20px;
-    }
-
-    #temperature {
-        font-size: 15px !important;
-    }
-
-    #icone {
-        font-size: 30px;
-    }
-
-    #description, #wind, #humidity, .wind-humidity {
-        font-size: 15px !important;
-    }
-
-    .credits {
-        display: none;
-    }
-
-    .modal-content {
-        width: 450px;
-        margin: 0 auto;
-    }
-
-    button {
-        margin: 10px 5px !important;
-    }
 }
 
 #description {
@@ -261,14 +86,6 @@ form {
     font-style: italic;
 }
 
-.row {
-    background-color: #333;
-    width: 500px;
-    margin: 0px auto;
-    padding: 20px;
-    border-radius: 15px;
-}
-  
 #ville {
     text-transform: capitalize;
 }
@@ -300,4 +117,176 @@ form {
     background-color: #917046;
     padding: 10px 15px;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 1439px) and (orientation: landscape) {
+    .container {
+        top: 10%;
+    }
+
+    .credits {
+        left: 2%;
+        bottom: 2%;
+    }
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait) {
+    .container {
+        top: 20%;
+    }
+
+    .row {
+        max-width: 380px;
+    }
+
+    .credits {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        top: 10px;
+        margin: 0px auto;
+    }
+
+    .row {
+        max-width: 450px;
+        padding: 10px 20px;
+    }
+
+    .col-md-10 h1 {
+        font-size: 30px;
+    }
+
+    .col-md-10 h4 {
+        font-size: 20px;
+    }
+
+    .col-md-10 h2 {
+        font-size: 25px;
+    }
+
+    #temperature {
+        font-size: 1.5em;
+    }
+
+    #icone {
+        font-size: 40px;
+    }
+
+    #description, #wind, #humidity {
+        font-size: inherit;
+    }
+
+    .credits {
+        display: none;
+    }
+
+    button.btn {
+        margin: 10px 5px;
+    }
+}
+
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    html, body {
+        overflow: unset;
+        overflow-x: hidden;
+    }
+
+    .container {
+        top: 10%;
+    }
+
+    .row {
+        width: 290px;
+    }
+
+    .col-md-10 h1 {
+        font-size: 30px;
+    }
+
+    .col-md-10 h4 {
+        font-size: 20px;
+    }
+
+    .col-md-10 h2 {
+        font-size: 25px;
+    }
+
+    #temperature {
+        font-size: 1.5em;
+    }
+
+    #icone {
+        font-size: 40px;
+    }
+
+    #description, #wind, #humidity, .wind-humidity {
+        font-size: 20px;
+    }
+
+    button.btn {
+        margin: 5px 20px;
+        padding: 10px 15px;
+    }
+
+    .credits {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) and (max-height: 450px) and (orientation: landscape) {
+    html, body {
+        overflow: unset;
+        overflow-x: hidden;
+    }
+
+    .container {
+        top: 0px;
+        margin: 5px auto;
+    }
+
+    .row {
+        width: 400px;
+        padding: 5px 20px;
+    }
+
+    .col-md-10 h1 {
+        font-size: 25px;
+    }
+
+    .col-md-10 h4 {
+        font-size: 15px;
+    }
+
+    .col-md-10 h2 {
+        font-size: 20px;
+    }
+
+    #temperature {
+        font-size: 20px;
+    }
+
+    #icone {
+        font-size: 30px;
+    }
+
+    #description, #wind, #humidity, .wind-humidity {
+        font-size: 20px;
+    }
+
+    .credits {
+        display: none;
+    }
+
+    .modal-content {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    button.btn {
+        margin: 10px 5px;
+        padding: 10px 15px;
+    }
 }
