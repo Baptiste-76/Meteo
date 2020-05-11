@@ -78,11 +78,14 @@ function getMeteo(url) {
             if (request.status === 200) {
                 let response = request.response;
                 let weatherId = response.weather[0].id;
+                let windSpeed = (response.wind.speed * 3.6).toLocaleString('fr-FR', {
+                    maximumFractionDigits: 0
+                });
 
                 document.getElementById("temperature_label").textContent = response.main.temp;
                 document.getElementById("ville").textContent = response.name;
                 document.getElementById("description").textContent = response.weather[0].description;
-                document.getElementById("wind").textContent = response.wind.speed;
+                document.getElementById("wind").textContent = windSpeed;
                 document.getElementById("humidity").textContent = response.main.humidity;
 
                 if (weatherId >= 200 && weatherId <= 232) {
