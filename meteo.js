@@ -25,13 +25,20 @@ if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition((position) => {
         const URL = "https://api.openweathermap.org/data/2.5/weather?lon=" + position.coords.longitude + "&lat=" + position.coords.latitude + "&appid=119b1d107ca09aec999d0ff5a7fb8ac7&units=metric&lang=fr";
         getMeteo(URL);
-    }, error, options);
+    }, locationError, options);
 } else {
-    error();
+    locationError();
 }
 
 // Code executé si la géolocalisation est refusée par l'utilisateur ou si une erreur interne survient
 function error() {
+    document.querySelector(".error-alert").style.display = "block";
+    const URL = "https://api.openweathermap.org/data/2.5/weather?q=paris&appid=119b1d107ca09aec999d0ff5a7fb8ac7&units=metric&lang=fr";
+    getMeteo(URL);
+}
+
+function locationError() {
+    document.querySelector(".location-alert").style.display = "block";
     const URL = "https://api.openweathermap.org/data/2.5/weather?q=paris&appid=119b1d107ca09aec999d0ff5a7fb8ac7&units=metric&lang=fr";
     getMeteo(URL);
 }
@@ -109,7 +116,7 @@ function getMeteo(url) {
                 }
              
             } else {
-                document.querySelector(".alert").style.display = "block";
+                document.querySelector(".error-alert").style.display = "block";
             }
             $(".form-control").val("");
         }
@@ -118,6 +125,7 @@ function getMeteo(url) {
 
 // Toggle des boutons pour choisir la méthode de sélection
 $("#byName").on("click", function() {
+    $("input").val("");
     $("button[type=submit]").show();
     $(".nameInput").show();
     $("#cityName").focus();
@@ -125,6 +133,7 @@ $("#byName").on("click", function() {
     $(".coordInput").hide();
 });
 $("#byZip").on("click", function() {
+    $("input").val("");
     $("button[type=submit]").show();
     $(".nameInput").hide();
     $(".zipInput").show();
@@ -132,6 +141,7 @@ $("#byZip").on("click", function() {
     $(".coordInput").hide();
 });
 $("#byCoord").on("click", function() {
+    $("input").val("");
     $("button[type=submit]").show();
     $(".nameInput").hide();
     $(".zipInput").hide();
