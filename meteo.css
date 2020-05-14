@@ -193,7 +193,7 @@ form {
     }
 }
 
-@media screen and (max-width: 350px) and (orientation: portrait) {
+@media screen and (max-width: 400px) and (orientation: portrait) {
     html, body {
         overflow: unset;
         overflow-x: hidden;
